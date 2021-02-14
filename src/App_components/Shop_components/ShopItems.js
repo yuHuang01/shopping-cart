@@ -7,7 +7,7 @@ const ShopItems = [
     { //extra infos
       id: 1,
       price: 100,
-      decription: 'anquish monsters with strategic cardplay. Fulfill your quest to leave your legacy!',
+      description: 'Vanquish monsters with strategic cardplay. Fulfill your quest to leave your legacy! ',
       src: 'gloomhaven.jpg'
     }
   ],
