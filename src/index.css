@@ -4,6 +4,7 @@ html{
 
   --main-color: #729290;
   --sec-color: #BFE3E1;
+  --thri-color: #F7F7F7;
 }
 body {
   padding: 0px;
@@ -57,6 +58,9 @@ body {
 #Navbar a {
   text-decoration: none;
   color: black;
+
+  border-left: 1px solid var(--thri-color);
+  border-right: 1px solid var(--thri-color);
 }
 #Navbar a:last-child{
   margin-left: auto;
@@ -92,10 +96,14 @@ body {
 
   padding: 20px;
 
-  background-color: rgba(255, 255, 255, 0.432);
+  background-color: rgba(255, 255, 255, 0.726);
 }
 #centerDiv > h1 {
   font-size: 70px;
+}
+#centerDiv a {
+  text-decoration: none;
+  color: black;
 }
 #shopHere{
   width: 350px;
@@ -111,9 +119,9 @@ body {
 }
 ::-webkit-scrollbar{
   width: 10px;
-  background-color: var(--sec-color);
+  background-color: var(--thri-color);
 }
 ::-webkit-scrollbar-thumb{
-  background-color: var(--main-color);
+  background-color: var(--sec-color);
   border-radius: 5px;
 }
