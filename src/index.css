@@ -125,3 +125,10 @@ body {
   background-color: var(--sec-color);
   border-radius: 5px;
 }
+
+/*Shop.js*/
+#Shop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
