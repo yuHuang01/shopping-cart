@@ -8,10 +8,37 @@ import ShopCart from './App_components/ShopCart';
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const [numOfCartItems, setNumOfCartItems] = useState(0);
+  const [total, setTotal] = useState(0);
   
+  const changeQuantity = (change, cartI) => {
+    const index = cartItems.indexOf(cartI);
+    
+    const newCartI = cartI;
+    if(change === 'plus'){
+      newCartI[2] = newCartI[2] + 1;
+      setNumOfCartItems(preNum => preNum + 1)
+    }else if(change === 'minus'){
+      newCartI[2] = newCartI[2] - 1;
+      setNumOfCartItems(preNum => preNum + 1)
+    }
+
+    const newCartItems = cartItems;
+    newCartItems.splice(index, 1, newCartI);
+
+    setCartItems(newCartItems);
+  };
+  const deleteItem = (itemName) => {
+    const newItems = cartItems.filter(cartItem => cartItem[0] !== itemName);
+    setCartItems(newItems);
+  };
+
   useEffect(() => {
-    setNumOfCartItems(cartItems.length)
-  }, [cartItems]);
+    setCartItems(cartItems);
+  }, [numOfCartItems]);
+
+  useEffect(() => {
+    setTotal(cartItems.reduce((acc, cNum) => { return acc + cNum[2] * (cNum[1].price) }, 0))
+  }, [numOfCartItems]);
 
   return (
     <div className="App">
@@ -20,8 +47,8 @@ function App() {
         <div id="content">
           <Switch>
             <Route exact path='/' component = { Home }/>
-            <Route path='/shop' render = {() => <Shop cartItems = { cartItems } setCartItems = { setCartItems }/>}/>
-            <Route path='/shopcart' render = { () => <ShopCart cartItems = { cartItems } setCartItems = { setCartItems }/>} />
+            <Route path='/shop' render = {() => <Shop cartItems = { cartItems } setCartItems = { setCartItems } setNumOfCartItems = { setNumOfCartItems }/>}/>
+            <Route path='/shopcart' render = { () => <ShopCart cartItems = { cartItems } changeQuantity = { changeQuantity } deleteItem = { deleteItem } total = { total }/>} />
           </Switch>
       </div>
       </Router>

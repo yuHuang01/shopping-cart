@@ -1,6 +1,6 @@
 import ShopItems from './ShopItems'
 
-const ListShopItems = ({ cartItems, setCartItems }) => {
+const ListShopItems = ({ cartItems, setCartItems, setNumOfCartItems }) => {
 
   const checkIfAdded = (boardName) => {
     return ( cartItems.find((cartItem) => cartItem[0] === boardName) )
@@ -25,6 +25,7 @@ const ListShopItems = ({ cartItems, setCartItems }) => {
                 if(checkRes === undefined){
                   const newCartArr = makeCartArr(shopItem);
                   setCartItems([...cartItems, newCartArr]);
+                  setNumOfCartItems(preNum => preNum + 1)
                 }else{
                   alert('That item is already added to your cart!')
                 }

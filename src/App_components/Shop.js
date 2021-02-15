@@ -1,6 +1,6 @@
 import ListShopItems from "./Shop_components/ListShopItems"
 
-const Shop = ({ cartItems, setCartItems }) => {
+const Shop = ({ cartItems, setCartItems, setNumOfCartItems }) => {
   return (
     <div id="Shop">
       <div id="top-div">
@@ -8,7 +8,7 @@ const Shop = ({ cartItems, setCartItems }) => {
         <h1>Looking for some good board game?</h1>
       <p><i>Then, there is no better place to be!</i></p>
       </div>
-      <ListShopItems cartItems = { cartItems } setCartItems = { setCartItems }/>
+      <ListShopItems cartItems = { cartItems } setCartItems = { setCartItems } setNumOfCartItems = { setNumOfCartItems }/>
     </div>
   );
 }
