@@ -13,6 +13,9 @@ body {
   margin: 0px;
   height: 100%;
 }
+body button {
+  outline: none;
+}
 #root{
   height: 100%;
 }
@@ -207,8 +210,6 @@ body {
   background-color: var(--thri-color);
 
   cursor: pointer;
-
-  outline: none;
 }
 
 .shop-items button:hover {
@@ -233,20 +234,63 @@ body {
   background-color: var(--main-color);
   color: white;
 }
-#ShopCart p {
+#ShopCart > p {
   margin-left: 10px;
 }
 #ListShopCartContent {
   margin-left: 10px;
   margin-bottom: 10px;
+  padding: 0px;
 
   border: 1px solid var(--main-color);
 
-  min-height: 50px;
+  min-height: 80px;
   max-width: 880px;
 }
 
-#ShopCart button {
+.cartItem {
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px;
+}
+.cartItem h3{
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.nameAndPrice p {
+  margin-top: 0px;
+}
+.quantity {
+  height: 30px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.quantity > p {
+  margin: 0px;
+}
+.plusMinus {
+  width: 100px;
+  height: 30px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.quantBtn {
+  height: 26px;
+  width: 26px;
+  border: 2px solid var(--main-color);
+  border-radius: 13px;
+
+  font-size: 20px;
+}
+
+#ShopCart > button {
   width: 100px;
   height: 30px;
 
@@ -258,6 +302,7 @@ body {
   margin-bottom: 10px;
 
   cursor: pointer;
+
 }
 #ShopCart button:hover {
   background-color: var(--sec-color);

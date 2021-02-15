@@ -6,12 +6,13 @@ import Shop from './App_components/Shop';
 import ShopCart from './App_components/ShopCart';
 
 function App() {
-  const [cartItems, setCartItem] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
   const [numOfCartItems, setNumOfCartItems] = useState(0);
   
   useEffect(() => {
     setNumOfCartItems(cartItems.length)
-  }, [cartItems])
+  }, [cartItems]);
+
   return (
     <div className="App">
       <Router>
@@ -19,8 +20,8 @@ function App() {
         <div id="content">
           <Switch>
             <Route exact path='/' component = { Home }/>
-            <Route path='/shop' render = {() => <Shop cartItems = { cartItems } setCartItem = { setCartItem }/>}/>
-            <Route path='/shopcart' component = { ShopCart } />
+            <Route path='/shop' render = {() => <Shop cartItems = { cartItems } setCartItems = { setCartItems }/>}/>
+            <Route path='/shopcart' render = { () => <ShopCart cartItems = { cartItems } setCartItems = { setCartItems }/>} />
           </Switch>
       </div>
       </Router>
