@@ -19,7 +19,7 @@ function App() {
         <div id="content">
           <Switch>
             <Route exact path='/' component = { Home }/>
-            <Route path='/shop' component = { Shop }/>
+            <Route path='/shop' render = {() => <Shop cartItems = { cartItems } setCartItem = { setCartItem }/>}/>
             <Route path='/shopcart' component = { ShopCart } />
           </Switch>
       </div>

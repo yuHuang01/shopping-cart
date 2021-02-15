@@ -1,6 +1,6 @@
 import ListShopItems from "./Shop_components/ListShopItems"
 
-const Shop = () => {
+const Shop = ({ cartItems, setCartItem }) => {
   return (
     <div id="Shop">
       <div id="top-div">
@@ -9,7 +9,7 @@ const Shop = () => {
       <p><i>Then, there is no better place to be!</i></p>
       </div>
       
-      <ListShopItems />
+      <ListShopItems cartItems = { cartItems } setCartItem = { setCartItem }/>
     </div>
   );
 }

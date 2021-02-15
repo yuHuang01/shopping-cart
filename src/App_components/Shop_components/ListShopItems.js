@@ -1,6 +1,15 @@
 import ShopItems from './ShopItems'
 
-const ListShopItems = () => {
+const ListShopItems = ({ cartItems, setCartItem }) => {
+
+  const checkIfAdded = (boardName) => {
+    return ( cartItems.find((cartItem) => cartItem[0] === boardName) )
+  };
+
+  const makeCartArr = (itemArr) => {
+    return [...itemArr, 1];
+  }
+
   return (
     <div id="ListShopItems">
       {ShopItems.map(shopItem => {
@@ -11,7 +20,16 @@ const ListShopItems = () => {
               <h3>{ shopItem[0] }</h3>
               <p>{ shopItem[1].description }</p>
               <p><strong>Price:</strong> { shopItem[1].price }$</p>
-              <button type="button">Add to Cart</button>
+              <button type="button" onClick = {() => {
+                const checkRes = checkIfAdded(shopItem[0]);
+                if(checkRes === undefined){
+                  const newCartArr = makeCartArr(shopItem);
+                  setCartItem([...cartItems, newCartArr]);
+                  console.log(cartItems)
+                }else{
+                  alert('That item is already added to your cart!')
+                }
+              }}>Add to Cart</button>
             </div>
           </div>
         )

@@ -41,7 +41,7 @@ body {
   margin: 0px;
   margin-bottom: 5px;
 
-  cursor: pointer;
+  cursor: default;
 }
 #Navbar ul {
   display: flex;
@@ -207,6 +207,8 @@ body {
   background-color: var(--thri-color);
 
   cursor: pointer;
+
+  outline: none;
 }
 
 .shop-items button:hover {
@@ -231,13 +233,33 @@ body {
   background-color: var(--main-color);
   color: white;
 }
+#ShopCart p {
+  margin-left: 10px;
+}
+#ListShopCartContent {
+  margin-left: 10px;
+  margin-bottom: 10px;
+
+  border: 1px solid var(--main-color);
+
+  min-height: 50px;
+  max-width: 880px;
+}
+
 #ShopCart button {
   width: 100px;
   height: 30px;
 
   font-size: 15px;
 
-  
-
   border: 2px solid var(--main-color);
+
+  margin-left: 10px;
+  margin-bottom: 10px;
+
+  cursor: pointer;
+}
+#ShopCart button:hover {
+  background-color: var(--sec-color);
+  color: white;
 }
