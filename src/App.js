@@ -19,7 +19,7 @@ function App() {
       setNumOfCartItems(preNum => preNum + 1)
     }else if(change === 'minus'){
       newCartI[2] = newCartI[2] - 1;
-      setNumOfCartItems(preNum => preNum + 1)
+      setNumOfCartItems(preNum => preNum - 1)
     }
 
     const newCartItems = cartItems;
@@ -27,8 +27,9 @@ function App() {
 
     setCartItems(newCartItems);
   };
-  const deleteItem = (itemName) => {
-    const newItems = cartItems.filter(cartItem => cartItem[0] !== itemName);
+  const deleteItem = (item) => {
+    setNumOfCartItems(preNum => preNum - item[2]);
+    const newItems = cartItems.filter(cartItem => cartItem[0] !== item[0]);
     setCartItems(newItems);
   };
 

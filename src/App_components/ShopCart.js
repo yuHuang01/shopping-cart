@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import ListCartItems from './ShopCart_component/ListCartItems';
 
 const ShopCart = ( {cartItems, changeQuantity, deleteItem, total }) => {
